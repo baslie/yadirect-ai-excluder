@@ -546,7 +546,7 @@ def main():
         print(f"Используется файл из аргумента: {file_path}\n")
     else:
         # Путь по умолчанию (измените на актуальный)
-        file_path = r'C:\Users\Roman\Desktop\direct\data\input\2025-10-24_2025-10-25_brelokavto.csv'
+        file_path = r'data\input\2025-07-27_2025-10-25_brelokavto.csv'
         print(f"Используется файл по умолчанию: {file_path}\n")
 
     # Шаг 1: Загрузка и предобработка
@@ -567,7 +567,7 @@ def main():
     print("=" * 80)
 
     if len(blocking_df) > 0:
-        output_csv = r'C:\Users\Roman\Desktop\direct\data\output\Площадки_к_блокировке.csv'
+        output_csv = r'data\output\Площадки_к_блокировке.csv'
         blocking_df.to_csv(output_csv, index=False, encoding='utf-8-sig', sep=';')
         print(f"✓ Файл сохранен: {output_csv}")
     else:
@@ -576,7 +576,7 @@ def main():
     # Шаг 6: Создание аналитической справки
     report = create_analytical_report(df, blocking_df, averages, segments)
 
-    output_txt = r'C:\Users\Roman\Desktop\direct\data\output\Аналитическая_справка.txt'
+    output_txt = r'data\output\Аналитическая_справка.txt'
     with open(output_txt, 'w', encoding='utf-8') as f:
         f.write(report)
     print(f"✓ Аналитическая справка сохранена: {output_txt}")
